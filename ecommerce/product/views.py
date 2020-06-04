@@ -14,3 +14,9 @@ def index(req):
                }
     # print(context)
     return render(req, 'index1.html', context)
+
+
+def product_details(req, slug):
+    item_details = products.objects.get(slug=slug)
+    context = {'item_details': item_details, }
+    return render(req, 'itemdetails.html', context)
