@@ -47,13 +47,14 @@
         </div>
       </div>
 
-
-      {% for catagory in catagory_list %}
+      
+      
       <div class="row featured__filter">
-        <div class="col-lg-3 col-md-4 col-sm-6 mix {{catagory}}">
+        {% for item in product_list %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mix {{item.catagory}}">
           <div class="featured__item">
-            {% for item in product_list %}
-            {% if item.catagory == catagory %}
+            
+            
             <div class="featured__item__pic set-bg" data-setbg="{{item.image.url}}">
               <ul class="featured__item__pic__hover">
                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -64,11 +65,13 @@
               <h6><a href="{% url 'products:product_details' item.slug %}">{{item.name}}</a></h6>
               <h5>{{item.price}}</h5>
             </div>
-            {% endif %}
-            {% endfor %}
+            
+            
           </div>
+          
         </div>
         {% endfor %}
+      </div>  
 
 
   </section>

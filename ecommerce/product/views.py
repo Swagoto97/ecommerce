@@ -13,7 +13,7 @@ def index(req):
                'catagory_list': catagory_list,
                }
     # print(context)
-    return render(req, 'index1.html', context)
+    return render(req, 'index.html', context)
 
 
 def product_details(req, slug):
